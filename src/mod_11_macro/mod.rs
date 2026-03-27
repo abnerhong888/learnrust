@@ -27,24 +27,6 @@ macro_rules! impl_struct {
 create_struct!(MyStruct, i32);
 impl_struct!(MyStruct);
 
-macro_rules! create_struct2 {
-    ($name:ident { $( $field:ident : $ty:ty ),* }) => {
-        #[derive(Debug)]
-        struct $name {
-            $( 
-                #[allow(unused)]
-                pub $field: $ty, 
-            )*
-        }
-    };
-}
-
-create_struct2!(User {
-    id: i32,
-    username: String,
-    is_active: bool
-});
-
 // $(...),* for auto expand by ','
 macro_rules! map {
     ( $( $key:expr => $value:expr),*) => { 
@@ -69,6 +51,24 @@ macro_rules! myvec {
         }
     }
 }
+
+macro_rules! create_struct2 {
+    ($name:ident { $( $field:ident : $ty:ty ),* }) => {
+        #[derive(Debug)]
+        struct $name {
+            $( 
+                #[allow(unused)]
+                pub $field: $ty, 
+            )*
+        }
+    };
+}
+
+create_struct2!(User {
+    id: i32,
+    username: String,
+    is_active: bool
+});
 
 pub fn run(){
     println!("===== mod_11_macro::run() =====");
