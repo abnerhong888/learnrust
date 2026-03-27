@@ -9,7 +9,7 @@ static GLOBAL_STR2: LazyLock<String> = LazyLock::new(|| {
     String::from("abner2")
 });
 
-#[allow(dead_code)]
+#[allow(unused)]
 type INT = i32;
 
 pub fn run(){
@@ -19,5 +19,5 @@ pub fn run(){
     println!("global i32 var = {}", GLOBAL_VAR);
     println!("global string var = {}", GLOBAL_STR);
     println!("global string var2 = {}", *GLOBAL_STR2);
-    println!("");
+    println!();
 }

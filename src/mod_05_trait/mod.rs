@@ -52,5 +52,5 @@ pub fn run(){
         animal.say();
     }
     
-    println!("");
+    println!();
 }

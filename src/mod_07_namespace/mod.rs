@@ -32,6 +32,8 @@ pub fn run(){
     level1::level1_func1();
     level1::level2::level3::level3_func1();
 
-
-    println!("");
+    let value = Box::new(100);
+    println!("value = {}", value);
+    drop(value);
+    println!();
 }

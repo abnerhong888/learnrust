@@ -6,6 +6,22 @@ struct Data{
     value: f64,
 }
 
+// like constructor in C++
+impl Default for Data{
+    fn default() -> Self {
+        Self {id: 0, name:String::from(""), value:0.0}
+    }
+}
+
+// like destructor in C++
+impl Drop for Data{
+    fn drop(&mut self){
+        self.id = 0;
+        self.name = String::from("");
+        self.value = 0.0;
+    }
+}
+
 // this is for impl funcs for Data structure
 impl Data{
     fn print(&self){
@@ -31,5 +47,5 @@ pub fn run(){
     // becasue of #[derive(Debug)], that we can print it directly
     println!("{:?}", data2);
 
-    println!("");
+    println!();
 }

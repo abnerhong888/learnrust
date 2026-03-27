@@ -5,6 +5,7 @@ pub fn run(){
     println!("this is mod_01::run()");
 }
 
+#[inline]
 pub fn func1(){
     println!("this is mod_01::func1()");
 }

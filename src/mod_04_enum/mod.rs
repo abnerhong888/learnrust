@@ -1,26 +1,28 @@
 enum Color{
     Red,
-    #[allow(dead_code)]
+    #[allow(unused)]
     Green,
-    #[allow(dead_code)]
+    #[allow(unused)]
     Blue
+}
+
+impl Color{
+    fn check_color(&self){
+        print!("color is ");
+        match self{
+            Color::Red => println!("[red]"),
+            Color::Green => println!("[green]"),
+            Color::Blue => {
+                println!("[blue]")
+            }
+        }
+    }
 }
 
 enum Info {
     Name(String),
     Age(u8),
     Id(u32)
-}
-
-fn check_color(color: &Color){
-    print!("color is ");
-    match color{
-        Color::Red => println!("[red]"),
-        Color::Green => println!("[green]"),
-        Color::Blue => {
-            println!("[blue]")
-        }
-    }
 }
 
 fn check_info(info: &Info){
@@ -41,9 +43,10 @@ pub fn run(){
     let _ = Info::Age(0);
     let _ = Info::Id(0);
 
-    check_color(&color);
+    color.check_color();
+    // check_color(&color);
 
     check_info(&info);
     
-    println!("");
+    println!();
 }

@@ -6,5 +6,5 @@ pub fn run(){
 
     crate::mod_01_module::func1();
     mod_01_module::func2();
-    println!("");
+    println!();
 }
